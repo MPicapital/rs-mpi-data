@@ -1,2 +1,2 @@
 pandas
-vnstock
+vnstock<3.0.0
