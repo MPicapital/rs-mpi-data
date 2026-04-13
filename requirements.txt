@@ -1,5 +1,8 @@
+Plaintext
 pandas
-vnstock<3.0.0
 requests
 beautifulsoup4
 lxml
+packaging
+openpyxl
+vnstock==0.2.8.9
