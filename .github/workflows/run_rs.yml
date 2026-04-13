@@ -2,22 +2,21 @@ name: Tinh Diem RS Hang Ngay
 
 on:
   schedule:
-    # Chạy vào 08:30 UTC (tương đương 15:30 giờ VN), từ Thứ 2 đến Thứ 6
     - cron: '30 8 * * 1-5'
-  workflow_dispatch: # Cho phép bạn bấm chạy thủ công để test
+  workflow_dispatch: 
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
+      
     steps:
     - name: Check out kho luu tru
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4 # Đã nâng cấp lên v4
 
     - name: Cai dat Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5 # Đã nâng cấp lên v5
       with:
         python-version: '3.10'
 
@@ -28,7 +27,7 @@ jobs:
       run: python main.py
 
     - name: Luu file du lieu vao GitHub
-      uses: stefanzweifel/git-auto-commit-action@v4
+      uses: stefanzweifel/git-auto-commit-action@v5 # Đã nâng cấp lên v5
       with:
         commit_message: "Tu dong cap nhat diem RS"
         file_pattern: data_rs.json
